@@ -5,144 +5,173 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BOPE | Recrutamento • Brasil Play Shox SV2</title>
+    <meta name="theme-color" content="#080b09">
 
-    <meta name="description"
-          content="Portal de recrutamento do BOPE - Brasil Play Shox SV2">
+    <meta
+        name="description"
+        content="Concurso B.O.P.E — Brasil Play Shox SV2"
+    >
 
-    <meta name="theme-color" content="#070b08">
+    <title>B.O.P.E | Concurso SV2</title>
 
-    <link rel="icon"
-          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23070b08'/%3E%3Cpath d='M50 10 82 23v25c0 22-14 34-32 42C32 82 18 70 18 48V23z' fill='%231d3527' stroke='%23b8a45a' stroke-width='4'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='24' fill='white'%3EBOPE%3C/text%3E%3C/svg%3E">
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23080b09'/%3E%3Cpath d='M32 5L55 13V29C55 44 46 54 32 59C18 54 9 44 9 29V13L32 5Z' fill='%231b241e' stroke='%23c8ad63' stroke-width='3'/%3E%3Ctext x='32' y='37' text-anchor='middle' font-size='15' font-family='Arial' font-weight='900' fill='white'%3EBOPE%3C/text%3E%3C/svg%3E"
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
     <link rel="stylesheet" href="css/bope.css">
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        defer
+    ></script>
 </head>
 
 <body>
 
-<div id="pageLoader">
-    <div class="loader-content">
-        <div class="loader-shield">
-            <i class="bi bi-shield-fill"></i>
-            <span>BOPE</span>
-        </div>
+<div class="page-bg"></div>
+<div class="background-grid"></div>
 
-        <div class="loader-line"></div>
+<header class="topbar">
 
-        <p>INICIALIZANDO SISTEMA</p>
-        <small>BRASIL PLAY SHOX • SV2</small>
+    <div class="topbar-inner">
+
+        <a href="#inicio" class="brand">
+
+            <div class="brand-shield">
+                <i class="bi bi-shield-fill"></i>
+                <span>BOPE</span>
+            </div>
+
+            <div class="brand-info">
+                <strong>B.O.P.E</strong>
+                <small>BRASIL PLAY SHOX • SV2</small>
+            </div>
+
+        </a>
+
+        <nav class="desktop-nav">
+
+            <a href="#inicio">INÍCIO</a>
+            <a href="#organizacao">ORGANIZAÇÃO</a>
+            <a href="#requisitos">REQUISITOS</a>
+            <a href="#regras">REGRAS</a>
+            <a href="#inscricao">CONCURSO</a>
+
+        </nav>
+
+        <button
+            type="button"
+            id="menuButton"
+            class="menu-button"
+        >
+            <i class="bi bi-list"></i>
+        </button>
+
     </div>
-</div>
 
-<header class="navbar" id="navbar">
-
-    <a href="#inicio" class="brand">
-
-        <div class="brand-shield">
-            <span>BOPE</span>
-        </div>
-
-        <div class="brand-text">
-            <strong>B.O.P.E</strong>
-            <small>BRASIL PLAY SHOX • SV2</small>
-        </div>
-
-    </a>
-
-    <nav id="mainNav">
+    <div id="mobileMenu" class="mobile-menu">
 
         <a href="#inicio">
             <i class="bi bi-house-fill"></i>
-            Início
+            INÍCIO
         </a>
 
         <a href="#organizacao">
             <i class="bi bi-shield-fill"></i>
-            Organização
+            ORGANIZAÇÃO
         </a>
 
         <a href="#requisitos">
-            <i class="bi bi-check2-square"></i>
-            Requisitos
+            <i class="bi bi-check2-circle"></i>
+            REQUISITOS
         </a>
 
         <a href="#regras">
-            <i class="bi bi-journal-text"></i>
-            Regras
+            <i class="bi bi-list-check"></i>
+            REGRAS
         </a>
 
-        <a href="#concurso" class="nav-highlight">
-            <i class="bi bi-crosshair"></i>
-            Concurso
+        <a href="#inscricao">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            CONCURSO
         </a>
 
-    </nav>
-
-    <button class="menu-button" id="menuButton" aria-label="Abrir menu">
-        <i class="bi bi-list"></i>
-    </button>
+    </div>
 
 </header>
 
-
 <main>
 
-<section class="hero" id="inicio">
+<section id="inicio" class="hero">
 
-    <div class="hero-grid"></div>
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
         <div class="hero-badge">
-            <span class="pulse"></span>
-            RECRUTAMENTO ABERTO
+            <span></span>
+            PROCESSO SELETIVO • SV2
         </div>
 
-        <div class="hero-logo">
+        <div class="hero-emblem">
 
-            <div class="hero-shield">
-                <div class="skull">☠</div>
+            <div class="emblem-ring">
+                <i class="bi bi-shield-shaded"></i>
                 <strong>BOPE</strong>
                 <small>SV2</small>
             </div>
 
         </div>
 
-        <p class="hero-overline">
-            BATALHÃO DE OPERAÇÕES ESPECIAIS
+        <p class="hero-kicker">
+            BRASIL PLAY SHOX
         </p>
 
         <h1>
-            DISCIPLINA.
-            <span>HONRA.</span>
-            ESTRATÉGIA.
+            CONCURSO
+            <span>B.O.P.E</span>
         </h1>
 
         <p class="hero-description">
-            O processo seletivo para ingresso no BOPE está aberto.
-            Demonstre conhecimento, postura, disciplina e capacidade
-            de trabalhar em equipe.
+            Sua disciplina, postura, conhecimento e
+            comprometimento serão colocados à prova.
         </p>
 
-        <div class="hero-buttons">
+        <div class="hero-actions">
 
-            <a href="#concurso" class="btn btn-primary">
-                <i class="bi bi-crosshair"></i>
+            <a
+                href="#inscricao"
+                class="btn btn-primary"
+            >
+                <i class="bi bi-shield-fill-check"></i>
                 PARTICIPAR DO CONCURSO
             </a>
 
-            <a href="#organizacao" class="btn btn-outline">
+            <a
+                href="#organizacao"
+                class="btn btn-outline"
+            >
                 <i class="bi bi-info-circle"></i>
-                CONHECER A ORGANIZAÇÃO
+                SAIBA MAIS
             </a>
 
         </div>
@@ -155,739 +184,648 @@
             </div>
 
             <div>
+                <i class="bi bi-file-earmark-lock-fill"></i>
+                PROCESSO 1000159497
+            </div>
+
+            <div>
                 <i class="bi bi-shield-check"></i>
                 SV2
             </div>
 
-            <div>
-                <i class="bi bi-lock-fill"></i>
-                PROCESSO SELETIVO
-            </div>
-
         </div>
 
-    </div>
-
-    <div class="hero-bottom">
-        <span>SCROLL PARA CONTINUAR</span>
-        <i class="bi bi-chevron-double-down"></i>
     </div>
 
 </section>
 
 
-<section class="intro-section" id="organizacao">
+<section id="organizacao" class="section">
 
     <div class="section-heading">
 
-        <span class="section-tag">
-            <i class="bi bi-radioactive"></i>
-            SOBRE A ORGANIZAÇÃO
+        <span class="section-label">
+            <i class="bi bi-shield-fill"></i>
+            UNIDADE TÁTICA
         </span>
 
         <h2>
-            NÃO É APENAS UMA
-            <span>ORGANIZAÇÃO.</span>
+            SOBRE A <span>ORGANIZAÇÃO</span>
         </h2>
 
         <p>
-            É uma equipe. Uma unidade. Uma responsabilidade.
+            Processo seletivo da organização dentro do
+            Brasil Play Shox.
         </p>
 
     </div>
 
-    <div class="intro-grid">
+    <div class="info-grid">
 
-        <div class="intro-main">
+        <article class="info-card">
+            <div class="info-icon">
+                <i class="bi bi-shield-fill-check"></i>
+            </div>
 
-            <div class="section-number">01</div>
-
-            <h3>
-                BATALHÃO DE OPERAÇÕES ESPECIAIS
-            </h3>
+            <h3>DISCIPLINA</h3>
 
             <p>
-                O BOPE possui uma atuação voltada para operações
-                especiais, situações de alto risco, intervenções,
-                operações territoriais e demais atividades definidas
-                pela organização.
+                Respeito à hierarquia, postura e
+                cumprimento dos procedimentos.
             </p>
+        </article>
+
+        <article class="info-card">
+            <div class="info-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <h3>TRABALHO EM EQUIPE</h3>
 
             <p>
-                Cada integrante representa a organização durante
-                suas atividades. Por isso, postura, disciplina,
-                comunicação e respeito à hierarquia são fundamentais.
+                Atuação coordenada com os demais
+                integrantes da organização.
             </p>
+        </article>
 
-            <div class="quote-box">
-                <i class="bi bi-quote"></i>
-
-                <div>
-                    <strong>DISCIPLINA É A BASE.</strong>
-                    <span>O TRABALHO EM EQUIPE É A FORÇA.</span>
-                </div>
+        <article class="info-card">
+            <div class="info-icon">
+                <i class="bi bi-crosshair"></i>
             </div>
 
-        </div>
+            <h3>PROCEDIMENTOS</h3>
 
+            <p>
+                Conhecimento das regras e procedimentos
+                necessários para o RP.
+            </p>
+        </article>
 
-        <div class="operation-card">
-
-            <div class="operation-top">
-                <span>BOPE</span>
-                <i class="bi bi-shield-shaded"></i>
+        <article class="info-card">
+            <div class="info-icon">
+                <i class="bi bi-headset"></i>
             </div>
 
-            <div class="operation-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <h3>COMUNICAÇÃO</h3>
 
-            <div class="operation-info">
-
-                <div>
-                    <small>UNIDADE</small>
-                    <strong>B.O.P.E</strong>
-                </div>
-
-                <div>
-                    <small>SERVIDOR</small>
-                    <strong>BRASIL PLAY SHOX</strong>
-                </div>
-
-                <div>
-                    <small>VERSÃO</small>
-                    <strong>SERVER 2</strong>
-                </div>
-
-            </div>
-
-            <div class="operation-skull">
-                ☠
-            </div>
-
-        </div>
+            <p>
+                Comunicação organizada através dos
+                canais utilizados pela organização.
+            </p>
+        </article>
 
     </div>
 
 </section>
 
 
-<section class="numbers-section">
-
-    <div class="number-item">
-        <strong>01</strong>
-        <span>DISCIPLINA</span>
-    </div>
-
-    <div class="number-item">
-        <strong>02</strong>
-        <span>ESTRATÉGIA</span>
-    </div>
-
-    <div class="number-item">
-        <strong>03</strong>
-        <span>HIERARQUIA</span>
-    </div>
-
-    <div class="number-item">
-        <strong>04</strong>
-        <span>TRABALHO EM EQUIPE</span>
-    </div>
-
-</section>
-
-
-<section class="requirements-section" id="requisitos">
+<section id="requisitos" class="section section-dark">
 
     <div class="section-heading">
 
-        <span class="section-tag">
+        <span class="section-label">
             <i class="bi bi-person-badge-fill"></i>
-            ANTES DE SE INSCREVER
+            CANDIDATO
         </span>
 
         <h2>
-            REQUISITOS PARA
-            <span>INGRESSAR</span>
+            O QUE <span>BUSCAMOS</span>
         </h2>
 
-        <p>
-            Certifique-se de que você está preparado para fazer parte
-            da organização.
-        </p>
-
     </div>
-
 
     <div class="requirements-grid">
 
         <article class="requirement-card">
-            <div class="req-icon">
-                <i class="bi bi-controller"></i>
-            </div>
-            <span>01</span>
-            <h3>Conhecimento</h3>
+            <span class="requirement-number">01</span>
+            <i class="bi bi-calendar-check-fill"></i>
+            <h3>DISPONIBILIDADE</h3>
             <p>
-                Conhecer as regras do servidor e compreender
-                os principais procedimentos de RP.
+                Disponibilidade compatível com as
+                atividades da organização.
             </p>
         </article>
 
+        <article class="requirement-card">
+            <span class="requirement-number">02</span>
+            <i class="bi bi-discord"></i>
+            <h3>DISCORD</h3>
+            <p>
+                Esteja preparado para utilizar o Discord
+                quando solicitado.
+            </p>
+        </article>
 
         <article class="requirement-card">
-            <div class="req-icon">
+            <span class="requirement-number">03</span>
+            <i class="bi bi-book-fill"></i>
+            <h3>CONHECIMENTO</h3>
+            <p>
+                Conheça as regras do servidor e os
+                procedimentos de RP.
+            </p>
+        </article>
+
+        <article class="requirement-card">
+            <span class="requirement-number">04</span>
+            <i class="bi bi-person-check-fill"></i>
+            <h3>COMPROMETIMENTO</h3>
+            <p>
+                Demonstre responsabilidade durante
+                sua permanência.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="regras" class="section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            ATENÇÃO
+        </span>
+
+        <h2>
+            REGRAS DO <span>PROCESSO</span>
+        </h2>
+
+    </div>
+
+    <div class="rules-grid">
+
+        <article class="rule-card">
+
+            <div class="rule-icon">
                 <i class="bi bi-discord"></i>
             </div>
-            <span>02</span>
-            <h3>Discord</h3>
-            <p>
-                Ter acesso ao Discord e acompanhar os canais
-                e comunicações da organização.
-            </p>
+
+            <div>
+                <h3>Uso do Discord</h3>
+
+                <p>
+                    O Discord deverá ser utilizado
+                    durante cronogramas quando solicitado.
+                </p>
+            </div>
+
         </article>
 
+        <article class="rule-card">
 
-        <article class="requirement-card">
-            <div class="req-icon">
-                <i class="bi bi-clock-fill"></i>
+            <div class="rule-icon">
+                <i class="bi bi-car-front-fill"></i>
             </div>
-            <span>03</span>
-            <h3>Disponibilidade</h3>
-            <p>
-                Possuir disponibilidade para treinamentos,
-                operações e cronogramas.
-            </p>
+
+            <div>
+                <h3>Organização dos veículos</h3>
+
+                <p>
+                    Os veículos devem permanecer
+                    organizados na HQ.
+                </p>
+            </div>
+
         </article>
 
+        <article class="rule-card">
 
-        <article class="requirement-card">
-            <div class="req-icon">
-                <i class="bi bi-people-fill"></i>
+            <div class="rule-icon">
+                <i class="bi bi-person-lines-fill"></i>
             </div>
-            <span>04</span>
-            <h3>Equipe</h3>
-            <p>
-                Saber trabalhar em equipe e seguir orientações
-                durante operações.
-            </p>
+
+            <div>
+                <h3>Hierarquia</h3>
+
+                <p>
+                    Respeite os integrantes responsáveis
+                    pela organização.
+                </p>
+            </div>
+
         </article>
 
+        <article class="rule-card">
 
-        <article class="requirement-card">
-            <div class="req-icon">
-                <i class="bi bi-diagram-3-fill"></i>
-            </div>
-            <span>05</span>
-            <h3>Hierarquia</h3>
-            <p>
-                Respeitar a cadeia de comando e os superiores
-                dentro da organização.
-            </p>
-        </article>
-
-
-        <article class="requirement-card">
-            <div class="req-icon">
-                <i class="bi bi-shield-lock-fill"></i>
-            </div>
-            <span>06</span>
-            <h3>Comprometimento</h3>
-            <p>
-                Demonstrar responsabilidade e compromisso
-                com a organização.
-            </p>
-        </article>
-
-    </div>
-
-</section>
-
-
-<section class="rules-section" id="regras">
-
-    <div class="rules-background"></div>
-
-    <div class="rules-content">
-
-        <div class="section-heading left">
-
-            <span class="section-tag">
-                <i class="bi bi-journal-check"></i>
-                CÓDIGO DE CONDUTA
-            </span>
-
-            <h2>
-                REGRAS DA
-                <span>ORGANIZAÇÃO</span>
-            </h2>
-
-            <p>
-                Antes de entrar, entenda a responsabilidade de
-                representar o BOPE.
-            </p>
-
-        </div>
-
-
-        <div class="rules-list">
-
-            <div class="rule-item">
-                <div class="rule-number">01</div>
-
-                <div>
-                    <h3>RESPEITO</h3>
-                    <p>
-                        Respeite membros da organização, superiores,
-                        demais jogadores e a equipe administrativa.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="rule-item">
-                <div class="rule-number">02</div>
-
-                <div>
-                    <h3>HIERARQUIA</h3>
-                    <p>
-                        Respeite a cadeia de comando e siga as
-                        orientações dos responsáveis.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="rule-item">
-                <div class="rule-number">03</div>
-
-                <div>
-                    <h3>COMUNICAÇÃO</h3>
-                    <p>
-                        Durante cronogramas e operações, mantenha
-                        os canais de comunicação disponíveis.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="rule-item">
-                <div class="rule-number">04</div>
-
-                <div>
-                    <h3>VIATURAS</h3>
-                    <p>
-                        Os veículos utilizados devem ser devolvidos
-                        e organizados na HQ.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="rule-item">
-                <div class="rule-number">05</div>
-
-                <div>
-                    <h3>DISCIPLINA</h3>
-                    <p>
-                        Atitudes inadequadas ou desobediência podem
-                        resultar em punições internas.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="rule-item">
-                <div class="rule-number">06</div>
-
-                <div>
-                    <h3>POSTURA</h3>
-                    <p>
-                        Mantenha comportamento compatível com a
-                        função durante as atividades.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="hierarchy-section">
-
-    <div class="section-heading">
-
-        <span class="section-tag">
-            <i class="bi bi-diagram-3-fill"></i>
-            ESTRUTURA
-        </span>
-
-        <h2>
-            HIERARQUIA &
-            <span>COMANDO</span>
-        </h2>
-
-        <p>
-            A organização funciona através de disciplina e cadeia
-            de comando.
-        </p>
-
-    </div>
-
-
-    <div class="hierarchy">
-
-        <div class="rank-card command">
-
-            <div class="rank-icon">
-                <i class="bi bi-star-fill"></i>
-            </div>
-
-            <small>COMANDO</small>
-            <h3>LIDERANÇA</h3>
-
-            <p>
-                Responsável pela direção da organização,
-                decisões e coordenação geral.
-            </p>
-
-        </div>
-
-
-        <div class="rank-card">
-
-            <div class="rank-icon">
-                <i class="bi bi-shield-fill"></i>
-            </div>
-
-            <small>SUBCOMANDO</small>
-            <h3>SUBLIDERANÇA</h3>
-
-            <p>
-                Apoio à liderança e coordenação das
-                atividades operacionais.
-            </p>
-
-        </div>
-
-
-        <div class="rank-card">
-
-            <div class="rank-icon">
-                <i class="bi bi-person-badge-fill"></i>
-            </div>
-
-            <small>EFETIVO</small>
-            <h3>OPERACIONAL</h3>
-
-            <p>
-                Participação em operações, treinamentos
-                e atividades da organização.
-            </p>
-
-        </div>
-
-
-        <div class="rank-card recruit">
-
-            <div class="rank-icon">
-                <i class="bi bi-person-plus-fill"></i>
-            </div>
-
-            <small>INGRESSO</small>
-            <h3>RECRUTA</h3>
-
-            <p>
-                Novo integrante em período de adaptação
-                e avaliação.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="functions-section">
-
-    <div class="section-heading">
-
-        <span class="section-tag">
-            <i class="bi bi-crosshair"></i>
-            ATUAÇÃO
-        </span>
-
-        <h2>
-            FUNÇÕES DO
-            <span>BOPE</span>
-        </h2>
-
-    </div>
-
-
-    <div class="functions-grid">
-
-        <div class="function-card">
-            <i class="bi bi-person-lines-fill"></i>
-            <h3>Abordagens</h3>
-            <p>Procedimentos de abordagem dentro das regras do servidor.</p>
-        </div>
-
-        <div class="function-card">
-            <i class="bi bi-shield-shaded"></i>
-            <h3>Operações</h3>
-            <p>Atuação coordenada em operações definidas pela organização.</p>
-        </div>
-
-        <div class="function-card">
-            <i class="bi bi-broadcast-pin"></i>
-            <h3>Comunicação</h3>
-            <p>Coordenação através dos canais oficiais da organização.</p>
-        </div>
-
-        <div class="function-card">
-            <i class="bi bi-geo-alt-fill"></i>
-            <h3>Territórios</h3>
-            <p>Atividades territoriais conforme as regras do servidor.</p>
-        </div>
-
-        <div class="function-card">
-            <i class="bi bi-car-front-fill"></i>
-            <h3>Patrulhamento</h3>
-            <p>Patrulhamento e localização de ocorrências.</p>
-        </div>
-
-        <div class="function-card">
-            <i class="bi bi-exclamation-triangle-fill"></i>
-            <h3>Intervenções</h3>
-            <p>Atuação em situações que exigem coordenação e estratégia.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="selection-section" id="concurso">
-
-    <div class="selection-bg"></div>
-
-    <div class="selection-content">
-
-        <div class="section-heading">
-
-            <span class="section-tag">
-                <i class="bi bi-crosshair"></i>
-                PROCESSO SELETIVO
-            </span>
-
-            <h2>
-                ESTÁ
-                <span>PREPARADO?</span>
-            </h2>
-
-            <p>
-                Sua disciplina, conhecimento e postura serão
-                colocados à prova.
-            </p>
-
-        </div>
-
-
-        <div class="selection-info">
-
-            <div class="selection-box">
+            <div class="rule-icon">
                 <i class="bi bi-clock-history"></i>
-
-                <div>
-                    <small>DURAÇÃO</small>
-                    <strong>30 MINUTOS</strong>
-                </div>
             </div>
-
-
-            <div class="selection-box">
-                <i class="bi bi-list-check"></i>
-
-                <div>
-                    <small>QUESTIONÁRIO</small>
-                    <strong>25 QUESTÕES</strong>
-                </div>
-            </div>
-
-
-            <div class="selection-box">
-                <i class="bi bi-envelope-fill"></i>
-
-                <div>
-                    <small>ENVIO</small>
-                    <strong>ANÁLISE DA LIDERANÇA</strong>
-                </div>
-            </div>
-
-        </div>
-
-
-        <button class="btn btn-primary btn-large" id="startTest">
-
-            <i class="bi bi-crosshair"></i>
-
-            INICIAR CONCURSO
-
-            <i class="bi bi-arrow-right"></i>
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<section class="test-section hidden" id="testSection">
-
-    <div class="test-wrapper">
-
-        <div class="test-header">
 
             <div>
+                <h3>Permanência</h3>
 
-                <span class="test-label">
-                    <i class="bi bi-shield-fill"></i>
-                    CONCURSO B.O.P.E
-                </span>
-
-                <h2>PROCESSO SELETIVO</h2>
-
+                <p>
+                    O candidato declara ciência sobre a
+                    blacklist conforme o processo.
+                </p>
             </div>
 
-
-            <div class="timer" id="timer">
-
-                <i class="bi bi-stopwatch-fill"></i>
-
-                <div>
-                    <small>TEMPO RESTANTE</small>
-                    <strong>30:00</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="progress-container">
-
-            <div class="progress-top">
-
-                <span>
-                    QUESTÃO
-                    <strong id="currentQuestion">1</strong>
-                    DE
-                    <strong id="totalQuestions">25</strong>
-                </span>
-
-                <span id="progressPercent">4%</span>
-
-            </div>
-
-            <div class="progress-bar">
-                <div id="progressFill"></div>
-            </div>
-
-        </div>
-
-
-        <div id="questionContainer"></div>
-
-
-        <div class="test-navigation">
-
-            <button class="test-nav-btn previous" id="previousButton">
-                <i class="bi bi-arrow-left"></i>
-                ANTERIOR
-            </button>
-
-            <button class="test-nav-btn next" id="nextButton">
-                PRÓXIMA
-                <i class="bi bi-arrow-right"></i>
-            </button>
-
-        </div>
+        </article>
 
     </div>
 
 </section>
 
 
-<section class="result-section hidden" id="resultSection">
+<section class="section section-dark">
 
-    <div class="result-card">
+    <div class="section-heading">
 
-        <div class="result-icon">
-            <i class="bi bi-check-lg"></i>
-        </div>
-
-        <span class="section-tag">PROCESSO FINALIZADO</span>
+        <span class="section-label">
+            <i class="bi bi-diagram-3-fill"></i>
+            PROCESSO
+        </span>
 
         <h2>
-            CONCURSO
-            <span>CONCLUÍDO</span>
+            ETAPAS DO <span>CONCURSO</span>
+        </h2>
+
+    </div>
+
+    <div class="steps-grid">
+
+        <article class="step-card">
+            <div class="step-number">01</div>
+            <h3>IDENTIFICAÇÃO</h3>
+            <p>
+                Informe seus dados básicos.
+            </p>
+        </article>
+
+        <article class="step-card">
+            <div class="step-number">02</div>
+            <h3>CONHECIMENTO</h3>
+            <p>
+                Responda às perguntas do concurso.
+            </p>
+        </article>
+
+        <article class="step-card">
+            <div class="step-number">03</div>
+            <h3>ANÁLISE</h3>
+            <p>
+                As respostas ficam disponíveis para análise.
+            </p>
+        </article>
+
+        <article class="step-card">
+            <div class="step-number">04</div>
+            <h3>RESULTADO</h3>
+            <p>
+                A liderança realizará a avaliação.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="inscricao" class="application-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            PROCESSO 1000159497
+        </span>
+
+        <h2>
+            CONCURSO <span>B.O.P.E</span>
         </h2>
 
         <p>
-            Suas respostas foram preenchidas. Revise suas informações
-            antes de finalizar o processo.
+            Leia atentamente e responda todas as perguntas.
         </p>
 
-        <div class="result-summary">
+    </div>
 
-            <div>
-                <small>CANDIDATO</small>
-                <strong id="resultNick">---</strong>
+
+    <div class="application-wrapper">
+
+        <aside class="application-sidebar">
+
+            <div class="sidebar-badge">
+
+                <i class="bi bi-shield-fill"></i>
+
+                <strong>BOPE</strong>
+
+                <small>
+                    BRASIL PLAY SHOX
+                </small>
+
             </div>
 
-            <div>
-                <small>QUESTÕES</small>
-                <strong>25</strong>
+            <div class="sidebar-line"></div>
+
+            <div class="sidebar-info">
+
+                <div>
+                    <span>PROCESSO</span>
+                    <strong>1000159497</strong>
+                </div>
+
+                <div>
+                    <span>QUESTÕES</span>
+                    <strong>25</strong>
+                </div>
+
+                <div>
+                    <span>TEMPO</span>
+                    <strong>30 MIN</strong>
+                </div>
+
             </div>
 
-            <div>
-                <small>STATUS</small>
-                <strong>AGUARDANDO ANÁLISE</strong>
+            <div class="sidebar-warning">
+
+                <i class="bi bi-exclamation-triangle-fill"></i>
+
+                <p>
+                    Responda com atenção.
+                    Suas respostas serão enviadas
+                    para análise.
+                </p>
+
             </div>
 
-        </div>
+        </aside>
 
 
-        <div class="result-warning">
+        <div class="quiz-card">
 
-            <i class="bi bi-exclamation-triangle-fill"></i>
+            <div id="startScreen" class="start-screen">
 
-            <p>
-                Ao clicar em enviar, o seu aplicativo de e-mail será
-                aberto com as respostas organizadas para envio à
-                liderança.
-            </p>
+                <div class="start-icon">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
 
-        </div>
+                <span class="start-label">
+                    ACESSO AUTORIZADO
+                </span>
+
+                <h2>
+                    SEJA BEM-VINDO
+                </h2>
+
+                <h3>
+                    AO CONCURSO DA B.O.P.E
+                </h3>
+
+                <p>
+                    ☠️ Candidato, a partir de agora,
+                    sua disciplina, postura, conhecimento
+                    e comprometimento serão colocados à prova.
+                </p>
+
+                <p>
+                    🎖️ Mantenha a atenção, respeite
+                    a hierarquia e siga todas as
+                    instruções da equipe.
+                </p>
+
+                <div class="start-warning">
+
+                    <i class="bi bi-clock-fill"></i>
+
+                    <span>
+                        TEMPO:
+                        <strong>30 MINUTOS</strong>
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="startBtn"
+                    class="btn btn-primary start-button"
+                >
+                    <i class="bi bi-play-fill"></i>
+                    INICIAR CONCURSO
+                </button>
+
+            </div>
 
 
-        <div class="result-buttons">
+            <div id="quizPanel" class="quiz-panel hidden">
 
-            <button class="btn btn-outline" id="reviewButton">
-                <i class="bi bi-arrow-left"></i>
-                REVISAR
-            </button>
+                <div class="quiz-header">
 
-            <button class="btn btn-primary" id="sendButton">
-                <i class="bi bi-send-fill"></i>
-                ENVIAR CONCURSO
-            </button>
+                    <div>
+
+                        <span
+                            id="questionNumber"
+                            class="question-number"
+                        >
+                            QUESTÃO 01
+                        </span>
+
+                        <div class="progress-info">
+
+                            <span>PROGRESSO</span>
+
+                            <strong id="progressText">
+                                1 / 25
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timer-box">
+
+                        <i class="bi bi-stopwatch-fill"></i>
+
+                        <span id="timer">
+                            30:00
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="progress-container">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                        style="width: 4%"
+                    ></div>
+
+                </div>
+
+
+                <div
+                    id="questionContainer"
+                    class="question-container"
+                ></div>
+
+
+                <div class="quiz-navigation">
+
+                    <button
+                        type="button"
+                        id="prevBtn"
+                        class="btn btn-outline"
+                    >
+                        <i class="bi bi-arrow-left"></i>
+                        ANTERIOR
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nextBtn"
+                        class="btn btn-primary"
+                    >
+                        PRÓXIMA
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="resultScreen"
+                class="result-screen hidden"
+            >
+
+                <div class="result-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <span class="result-label">
+                    PROCESSO FINALIZADO
+                </span>
+
+                <h2>
+                    CONCURSO FINALIZADO
+                </h2>
+
+                <p>
+                    Suas respostas foram registradas.
+                </p>
+
+
+                <div class="result-data">
+
+                    <div>
+                        <span>CANDIDATO</span>
+
+                        <strong id="resultCandidateName">
+                            Candidato
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>DATA</span>
+
+                        <strong id="resultDate">
+                            —
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>QUESTÕES</span>
+
+                        <strong id="resultTotal">
+                            25
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>STATUS</span>
+
+                        <strong id="resultStatus">
+                            AGUARDANDO ANÁLISE
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="resultSummary"
+                    class="result-summary"
+                ></div>
+
+
+                <div class="result-actions">
+
+                    <div class="result-actions-title">
+
+                        <i class="bi bi-send-fill"></i>
+
+                        ENVIAR CONCURSO
+
+                    </div>
+
+                    <p class="send-description">
+                        Escolha o responsável que receberá
+                        o concurso. Depois selecione o método
+                        de envio.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        id="openSendModal"
+                        class="send-main-button"
+                    >
+                        <i class="bi bi-send-fill"></i>
+
+                        <span>
+                            ENVIAR CONCURSO
+                            <small>
+                                Escolher responsável e método
+                            </small>
+                        </span>
+
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+
+
+                    <div class="download-actions">
+
+                        <button
+                            type="button"
+                            id="downloadPDF"
+                            class="download-btn"
+                        >
+                            <i class="bi bi-file-earmark-pdf-fill"></i>
+                            BAIXAR PDF
+                        </button>
+
+                        <button
+                            type="button"
+                            id="downloadTXT"
+                            class="download-btn"
+                        >
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                            BAIXAR TXT
+                        </button>
+
+                        <button
+                            type="button"
+                            id="reviewButton"
+                            class="btn btn-outline"
+                        >
+                            <i class="bi bi-eye-fill"></i>
+                            REVISAR
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -898,60 +836,256 @@
 </main>
 
 
-<footer>
+<footer class="footer">
 
-    <div class="footer-top">
+    <div class="footer-brand">
 
-        <div class="footer-brand">
-
-            <div class="brand-shield">
-                <span>BOPE</span>
-            </div>
-
-            <div>
-                <strong>B.O.P.E</strong>
-                <small>BRASIL PLAY SHOX • SV2</small>
-            </div>
-
+        <div class="brand-shield">
+            <i class="bi bi-shield-fill"></i>
+            <span>BOPE</span>
         </div>
 
-
-        <div class="footer-warning">
-
-            <i class="bi bi-exclamation-triangle-fill"></i>
-
-            <span>
-                TODAS AS ATIVIDADES DEVEM SEGUIR AS REGRAS
-                DO SERVIDOR E DA ORGANIZAÇÃO.
-            </span>
-
+        <div>
+            <strong>B.O.P.E</strong>
+            <small>BRASIL PLAY SHOX • SV2</small>
         </div>
 
     </div>
 
+    <p>
+        Processo seletivo de organização RP.
+    </p>
 
-    <div class="footer-bottom">
-
-        <span>
-            © 2026 BOPE • BRASIL PLAY SHOX SV2
-        </span>
-
-        <span>
-            DISCIPLINA • HONRA • ESTRATÉGIA
-        </span>
-
-    </div>
+    <span>
+        PROCESSO 1000159497
+    </span>
 
 </footer>
 
 
-<div class="toast" id="toast">
-    <i class="bi bi-info-circle-fill"></i>
-    <span id="toastMessage"></span>
+<!-- MODAL DE ENVIO -->
+
+<div
+    id="sendModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="send-modal">
+
+        <button
+            type="button"
+            id="closeSendModal"
+            class="modal-close"
+        >
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+
+        <div class="modal-header">
+
+            <div class="modal-icon">
+                <i class="bi bi-send-fill"></i>
+            </div>
+
+            <span>
+                CENTRAL DE ENVIO
+            </span>
+
+            <h2>
+                ENVIAR PARA QUEM?
+            </h2>
+
+            <p>
+                Selecione o responsável que receberá
+                o concurso.
+            </p>
+
+        </div>
+
+
+        <div class="responsible-list">
+
+            <button
+                type="button"
+                class="responsible-card"
+                data-person="lider"
+            >
+
+                <div class="responsible-icon leader">
+                    <i class="bi bi-star-fill"></i>
+                </div>
+
+                <div class="responsible-info">
+
+                    <strong>
+                        LÍDER: Lucas12@
+                    </strong>
+
+                    <small>
+                        Responsável principal
+                    </small>
+
+                </div>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="responsible-card"
+                data-person="sub1"
+            >
+
+                <div class="responsible-icon">
+                    <i class="bi bi-shield-fill"></i>
+                </div>
+
+                <div class="responsible-info">
+
+                    <strong>
+                        SUBLÍDER 1: Angela_Lopez
+                    </strong>
+
+                    <small>
+                        Responsável da organização
+                    </small>
+
+                </div>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="responsible-card"
+                data-person="sub2"
+            >
+
+                <div class="responsible-icon">
+                    <i class="bi bi-shield-fill"></i>
+                </div>
+
+                <div class="responsible-info">
+
+                    <strong>
+                        SUBLÍDER 2: surfistinha021_
+                    </strong>
+
+                    <small>
+                        Responsável da organização
+                    </small>
+
+                </div>
+
+                <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="methodPanel"
+            class="method-panel hidden"
+        >
+
+            <div class="selected-person">
+
+                <button
+                    type="button"
+                    id="backToPeople"
+                    class="back-button"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+
+                <div id="selectedPersonIcon">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+
+                <div>
+                    <span>
+                        ENVIAR PARA
+                    </span>
+
+                    <strong id="selectedPersonName">
+                        LÍDER
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="method-title">
+                <span>
+                    MÉTODO DE ENVIO
+                </span>
+
+                <strong>
+                    Como deseja enviar?
+                </strong>
+            </div>
+
+
+            <div class="method-grid">
+
+                <button
+                    type="button"
+                    id="modalEmailButton"
+                    class="method-card email"
+                >
+
+                    <i class="bi bi-envelope-fill"></i>
+
+                    <strong>
+                        E-MAIL
+                    </strong>
+
+                    <small id="selectedEmail">
+                        lider@gmail.com
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="modalWhatsAppButton"
+                    class="method-card whatsapp"
+                >
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    <strong>
+                        WHATSAPP
+                    </strong>
+
+                    <small id="selectedWhatsApp">
+                        21999999999
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<script src="java/bope.js"></script>
+<div id="toast" class="toast"></div>
+
+
+<script
+    src="java/bope.js"
+    defer
+></script>
 
 </body>
 </html>

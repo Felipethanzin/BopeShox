@@ -1,24 +1,45 @@
+const PROCESSO = "1000159497";
+
+const EMAIL_CONTATOS = {
+    lider: {
+        nome: "LÍDER",
+        email: "lider@gmail.com",
+        whatsapp: "21999999999"
+    },
+
+    sub1: {
+        nome: "SUBLÍDER 1",
+        email: "sub1@gmail.com",
+        whatsapp: "21988888888"
+    },
+
+    sub2: {
+        nome: "SUBLÍDER 2",
+        email: "sub2@gmail.com",
+        whatsapp: "21977777777"
+    }
+};
+
+const TEMPO_TOTAL = 30 * 60;
+
 const questions = [
 
     {
         id: "nick",
-        category: "IDENTIFICAÇÃO",
         title: "Qual é o seu Nick?",
         type: "text",
-        placeholder: "Digite seu nick no servidor..."
+        placeholder: "Digite seu Nick..."
     },
 
     {
         id: "nivel",
-        category: "IDENTIFICAÇÃO",
         title: "Qual é o seu nível?",
         type: "text",
-        placeholder: "Ex: 10"
+        placeholder: "Digite seu nível..."
     },
 
     {
         id: "whatsapp",
-        category: "CONTATO",
         title: "Qual é o seu WhatsApp?",
         type: "text",
         placeholder: "(21) 99999-9999"
@@ -26,32 +47,28 @@ const questions = [
 
     {
         id: "disponibilidade",
-        category: "DISPONIBILIDADE",
         title: "Qual é a sua disponibilidade?",
         type: "radio",
         options: [
-            "🌅 Manhã",
-            "☀️ Tarde",
-            "🌙 Noite",
-            "🔄 Flexível"
+            "Manhã",
+            "Tarde",
+            "Noite"
         ]
     },
 
     {
         id: "discord",
-        category: "COMUNICAÇÃO",
         title: "Você pode sempre entrar no Discord?",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não",
-            "🟡 Às vezes"
+            "Sim",
+            "Não",
+            "Às vezes"
         ]
     },
 
     {
         id: "recrutador",
-        category: "RECRUTAMENTO",
         title: "Quem está fazendo o seu recrutamento?",
         type: "radio",
         options: [
@@ -63,148 +80,128 @@ const questions = [
 
     {
         id: "dm",
-        category: "CONHECIMENTO",
         title: "O que é DM? Explique.",
         type: "textarea",
-        placeholder: "Digite sua explicação..."
+        placeholder: "Explique com suas palavras..."
     },
 
     {
         id: "antirpg",
-        category: "CONHECIMENTO",
-        title: "O que é Anti-RPG? Explique.",
+        title: "O que é Ant Rpg? Explique.",
         type: "textarea",
-        placeholder: "Digite sua explicação..."
+        placeholder: "Explique com suas palavras..."
     },
 
     {
         id: "db",
-        category: "CONHECIMENTO",
         title: "O que é DB? Explique.",
         type: "textarea",
-        placeholder: "Digite sua explicação..."
+        placeholder: "Explique com suas palavras..."
     },
 
     {
         id: "regras",
-        category: "CONHECIMENTO",
         title: "Cite 5 regras do servidor.",
         type: "textarea",
-        placeholder: "Digite cinco regras que você conhece..."
+        placeholder: "Digite 5 regras..."
     },
 
     {
         id: "territorios",
-        category: "OPERAÇÕES",
         title: "Quais territórios a BOPE pode dominar?",
-        description: "Responda conforme as regras vigentes do servidor.",
-        type: "textarea",
+        type: "text",
         placeholder: "Digite sua resposta..."
     },
 
     {
         id: "abordagem",
-        category: "PROCEDIMENTOS",
         title: "Como faz uma abordagem em um suspeito?",
         type: "textarea",
-        placeholder: "Explique passo a passo..."
+        placeholder: "Descreva o procedimento..."
     },
 
     {
         id: "procurado",
-        category: "PROCEDIMENTOS",
-        title: "Você está patrulhando em LS e encontra um procurado. Como daria a voz de prisão? E se o suspeito não aceitasse?",
+        title: "Você está patrulhando em LS e encontra um procurado, como você daria a voz de prisão? E se o suspeito não aceitasse a voz de prisão, quais seriam os próximos procedimentos?",
         type: "textarea",
-        placeholder: "Explique os procedimentos que você realizaria..."
+        placeholder: "Descreva detalhadamente..."
     },
 
     {
         id: "operacao",
-        category: "OPERAÇÃO TERRITORIAL",
-        title: "Cite procedimentos básicos de uma operação territorial.",
-        description: "Considere os procedimentos definidos para atuação governamental.",
+        title: "Cite procedimentos básicos de operação territorial.",
         type: "textarea",
-        placeholder: "Explique os procedimentos..."
+        placeholder: "Digite os procedimentos..."
     },
 
     {
         id: "sequestro",
-        category: "INTERVENÇÃO",
-        title: "Cite procedimentos básicos para realizar uma intervenção de sequestro.",
-        description: "Campo é necessário.",
+        title: "Cite procedimentos básicos para uma realização de uma intervenção de sequestro.",
         type: "textarea",
-        placeholder: "Explique como você procederia..."
+        placeholder: "Descreva os procedimentos..."
     },
 
     {
         id: "funcao",
-        category: "ORGANIZAÇÃO",
         title: "Qual é a principal função da BOPE?",
         type: "textarea",
-        placeholder: "Digite sua resposta..."
+        placeholder: "Explique..."
     },
 
     {
         id: "blacklist",
-        category: "CIÊNCIA DAS REGRAS",
-        title: "Você está ciente que, se sair da organização em menos de 3 dias, poderá levar blacklist?",
+        title: "Você está ciente que se sair da organização em menos de 3 dias levará blacklist?",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     },
 
     {
         id: "discordCronograma",
-        category: "DISCIPLINA",
-        title: "Está ciente de que o uso do Discord pode ser obrigatório durante cronogramas e que a desobediência pode gerar punições internas?",
+        title: "Na organização, é obrigatório o uso do Discord em casos que esteja sendo realizado cronograma. Em casos de desobediência você pode e vai tomar punições internas de acordo com bom senso da administração.",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     },
 
     {
         id: "veiculos",
-        category: "DISCIPLINA",
-        title: "Está ciente de que deverá manter os veículos organizados na HQ?",
+        title: "Está ciente que deverá sempre manter a organização dos veículos na HQ, caso espalhe veículo será punido com rebaixamento de cargo, demissão ou até Blacklist em casos extremos?",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     },
 
     {
         id: "experienciaPolicial",
-        category: "EXPERIÊNCIA",
-        title: "Você já participou de alguma organização policial?",
+        title: "Já participou alguma vez de uma organização policial?",
         type: "radio",
         options: [
-            "🎖️ Sim, tenho experiência",
-            "❌ Não"
+            "Sim — Tenho experiência",
+            "Não"
         ]
     },
 
     {
         id: "suspeitoMatou",
-        category: "SITUAÇÃO RP",
-        title: "Você estava abordando um suspeito e, durante a abordagem, o suspeito lhe matou. O que você faria?",
+        title: "Você estava abordando um suspeito, e durante a abordagem o suspeito lhe matar, o que você faria?",
         type: "radio",
         options: [
-            "❌ Vou atrás do suspeito e mato ele.",
-            "🔄 Vou até o suspeito e faço outra abordagem novamente.",
-            "📻 Peço reforços no /g."
+            "Vou atrás do suspeito e mato ele.",
+            "Vou até o suspeito e faço outra abordagem novamente.",
+            "Peço reforços no /g."
         ]
     },
 
     {
         id: "procedimentos",
-        category: "PROCEDIMENTOS POLICIAIS",
-        title: "Quais tipos de procedimentos policiais você sabe fazer?",
-        description: "Seja sincero. Você pode selecionar mais de uma opção.",
+        title: "Quais tipos de procedimentos policiais você sabe fazer? Seja sincero.",
         type: "checkbox",
         options: [
             "Procedimento de Abordagem",
@@ -219,349 +216,778 @@ const questions = [
 
     {
         id: "safeAbordagem",
-        category: "ÁREA NEUTRA",
-        title: "Tem um suspeito na área neutra (SAFE). Você pode abordar ele?",
-        description: "Considere a situação apresentada na pergunta.",
+        title: "Tem um suspeito na área neutra (safe), você pode abordar ele?",
+        helper: "O suspeito está sem estrela.",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     },
 
     {
         id: "safePrender",
-        category: "ÁREA NEUTRA",
-        title: "Tem um procurado na área neutra (SAFE). Você pode prender ele?",
-        description: "Considere a situação apresentada na pergunta.",
+        title: "Tem um procurado na área neutra (safe), você pode prender ele?",
+        helper: "O procurado está com estrela.",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     },
 
     {
         id: "invadirHQ",
-        category: "INVASÃO DE HQ",
-        title: "Tem um procurado dentro da HQ. Você pode invadir a HQ e dar voz de prisão estando sozinho?",
+        title: "Tem um procurado dentro da HQ, você pode invadir HQ e dar voz de prisão?",
+        helper: "Você está sozinho.",
         type: "radio",
         options: [
-            "✅ Sim",
-            "❌ Não"
+            "Sim",
+            "Não"
         ]
     }
-
 ];
 
 
-let currentQuestionIndex = 0;
-
 let answers = {};
-
-let timeRemaining = 30 * 60;
-
+let currentQuestion = 0;
+let remainingTime = TEMPO_TOTAL;
 let timerInterval = null;
-
 let testStarted = false;
+let testFinished = false;
+
+let selectedPerson = null;
 
 
-const pageLoader = document.getElementById("pageLoader");
-
-const navbar = document.getElementById("navbar");
-
-const mainNav = document.getElementById("mainNav");
-
-const menuButton = document.getElementById("menuButton");
-
-const startTest = document.getElementById("startTest");
-
-const testSection = document.getElementById("testSection");
-
-const selectionSection = document.getElementById("concurso");
-
-const questionContainer = document.getElementById("questionContainer");
-
-const previousButton = document.getElementById("previousButton");
-
-const nextButton = document.getElementById("nextButton");
-
-const currentQuestion = document.getElementById("currentQuestion");
-
-const totalQuestions = document.getElementById("totalQuestions");
-
-const progressPercent = document.getElementById("progressPercent");
-
-const progressFill = document.getElementById("progressFill");
-
-const timer = document.getElementById("timer");
-
-const resultSection = document.getElementById("resultSection");
-
-const resultNick = document.getElementById("resultNick");
-
-const reviewButton = document.getElementById("reviewButton");
-
-const sendButton = document.getElementById("sendButton");
-
-const toast = document.getElementById("toast");
-
-const toastMessage = document.getElementById("toastMessage");
+const $ = selector =>
+    document.querySelector(selector);
 
 
-document.addEventListener("DOMContentLoaded", () => {
+const questionContainer =
+    $("#questionContainer");
 
-    setTimeout(() => {
-        pageLoader.classList.add("loaded");
-    }, 900);
+const startScreen =
+    $("#startScreen");
 
-    totalQuestions.textContent = questions.length;
+const quizPanel =
+    $("#quizPanel");
 
-    setupNavigation();
+const resultScreen =
+    $("#resultScreen");
 
-    setupTest();
+const startButton =
+    $("#startBtn");
 
-});
+const nextButton =
+    $("#nextBtn");
+
+const prevButton =
+    $("#prevBtn");
+
+const progressBar =
+    $("#progressBar");
+
+const progressText =
+    $("#progressText");
+
+const questionNumber =
+    $("#questionNumber");
+
+const timerElement =
+    $("#timer");
+
+const reviewButton =
+    $("#reviewButton");
+
+const downloadPDFButton =
+    $("#downloadPDF");
+
+const downloadTXTButton =
+    $("#downloadTXT");
+
+const toast =
+    $("#toast");
+
+const sendModal =
+    $("#sendModal");
+
+const openSendModal =
+    $("#openSendModal");
+
+const closeSendModal =
+    $("#closeSendModal");
+
+const methodPanel =
+    $("#methodPanel");
+
+const backToPeople =
+    $("#backToPeople");
+
+const selectedPersonName =
+    $("#selectedPersonName");
+
+const selectedEmail =
+    $("#selectedEmail");
+
+const selectedWhatsApp =
+    $("#selectedWhatsApp");
+
+const modalEmailButton =
+    $("#modalEmailButton");
+
+const modalWhatsAppButton =
+    $("#modalWhatsAppButton");
 
 
-function setupNavigation() {
+function showToast(
+    message,
+    type = "normal"
+) {
 
-    window.addEventListener("scroll", () => {
+    if (!toast) {
+        return;
+    }
 
-        if (window.scrollY > 40) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
+    toast.textContent = message;
 
-    });
+    toast.className =
+        `toast ${type} show`;
 
+    clearTimeout(
+        showToast.timeout
+    );
 
-    menuButton.addEventListener("click", () => {
+    showToast.timeout =
+        setTimeout(() => {
 
-        mainNav.classList.toggle("open");
+            toast.classList.remove(
+                "show"
+            );
 
-        const icon = menuButton.querySelector("i");
-
-        if (mainNav.classList.contains("open")) {
-            icon.className = "bi bi-x-lg";
-        } else {
-            icon.className = "bi bi-list";
-        }
-
-    });
-
-
-    mainNav.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mainNav.classList.remove("open");
-
-            menuButton.querySelector("i").className = "bi bi-list";
-
-        });
-
-    });
-
+        }, 3500);
 }
 
 
-function setupTest() {
+function escapeHTML(value) {
 
-    startTest.addEventListener("click", startRecruitment);
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
 
-    previousButton.addEventListener("click", previousQuestion);
-
-    nextButton.addEventListener("click", nextQuestion);
-
-    reviewButton.addEventListener("click", reviewTest);
-
-    sendButton.addEventListener("click", sendEmail);
-
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
 
 
-function startRecruitment() {
+function normalizeAnswer(value) {
 
-    testStarted = true;
+    if (Array.isArray(value)) {
 
-    currentQuestionIndex = 0;
+        return value.length
+            ? value.join(", ")
+            : "Não informado";
+    }
 
-    timeRemaining = 30 * 60;
+    if (
+        value === undefined ||
+        value === null ||
+        String(value).trim() === ""
+    ) {
+        return "Não informado";
+    }
 
-    selectionSection.classList.add("hidden");
+    return String(value).trim();
+}
 
-    resultSection.classList.add("hidden");
 
-    testSection.classList.remove("hidden");
+function getCandidateName() {
 
-    window.scrollTo({
-        top: testSection.offsetTop - 20,
-        behavior: "smooth"
-    });
+    if (
+        answers.nick &&
+        String(answers.nick).trim()
+    ) {
+        return String(
+            answers.nick
+        ).trim();
+    }
 
-    renderQuestion();
+    return "Candidato";
+}
 
-    startTimer();
 
+function getCurrentDate() {
+
+    return new Date().toLocaleString(
+        "pt-BR",
+        {
+            dateStyle: "short",
+            timeStyle: "medium"
+        }
+    );
+}
+
+
+function saveAnswers() {
+
+    try {
+
+        localStorage.setItem(
+            "bope_concurso_answers",
+            JSON.stringify(answers)
+        );
+
+    } catch (error) {
+
+        console.warn(error);
+    }
+}
+
+
+function loadAnswers() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(
+                "bope_concurso_answers"
+            );
+
+        if (saved) {
+
+            answers =
+                JSON.parse(saved);
+        }
+
+    } catch {
+
+        answers = {};
+    }
+}
+
+
+function formatTime(seconds) {
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const secs =
+        seconds % 60;
+
+    return (
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(secs).padStart(2, "0")
+    );
+}
+
+
+function updateTimer() {
+
+    if (!timerElement) {
+        return;
+    }
+
+    timerElement.textContent =
+        formatTime(
+            remainingTime
+        );
+
+    timerElement.classList.remove(
+        "warning",
+        "danger"
+    );
+
+    if (
+        remainingTime <= 300
+    ) {
+
+        timerElement.classList.add(
+            "danger"
+        );
+
+    } else if (
+        remainingTime <= 600
+    ) {
+
+        timerElement.classList.add(
+            "warning"
+        );
+    }
+}
+
+
+function startTimer() {
+
+    stopTimer();
+
+    remainingTime =
+        TEMPO_TOTAL;
+
+    updateTimer();
+
+    timerInterval =
+        setInterval(() => {
+
+            remainingTime--;
+
+            updateTimer();
+
+            if (
+                remainingTime <= 0
+            ) {
+
+                stopTimer();
+
+                finishTest(true);
+            }
+
+        }, 1000);
+}
+
+
+function stopTimer() {
+
+    if (timerInterval) {
+
+        clearInterval(
+            timerInterval
+        );
+
+        timerInterval = null;
+    }
 }
 
 
 function renderQuestion() {
 
-    const question = questions[currentQuestionIndex];
+    const question =
+        questions[currentQuestion];
 
-    currentQuestion.textContent = currentQuestionIndex + 1;
-
-    const percent = Math.round(
-        ((currentQuestionIndex + 1) / questions.length) * 100
-    );
-
-    progressPercent.textContent = `${percent}%`;
-
-    progressFill.style.width = `${percent}%`;
-
-    let answerHTML = "";
-
-    if (question.type === "text") {
-
-        answerHTML = `
-            <textarea
-                class="text-answer short-answer"
-                id="answerField"
-                placeholder="${question.placeholder || ""}"
-                rows="3"
-            >${escapeHTML(answers[question.id] || "")}</textarea>
-        `;
-
+    if (!questionContainer) {
+        return;
     }
 
+    const number =
+        currentQuestion + 1;
 
-    if (question.type === "textarea") {
+    const percentage =
+        Math.round(
+            (number / questions.length) * 100
+        );
 
-        answerHTML = `
-            <textarea
-                class="text-answer"
-                id="answerField"
-                placeholder="${question.placeholder || ""}"
-            >${escapeHTML(answers[question.id] || "")}</textarea>
-        `;
+    questionNumber.textContent =
+        `QUESTÃO ${String(number).padStart(2, "0")}`;
 
-    }
+    progressText.textContent =
+        `${number} / ${questions.length}`;
 
-
-    if (question.type === "radio") {
-
-        answerHTML = `
-            <div class="answer-grid">
-                ${question.options.map((option, index) => {
-
-                    const checked =
-                        answers[question.id] === option
-                            ? "checked"
-                            : "";
-
-                    return `
-                        <div class="option">
-                            <input
-                                type="radio"
-                                id="${question.id}_${index}"
-                                name="${question.id}"
-                                value="${escapeAttribute(option)}"
-                                ${checked}
-                            >
-
-                            <label for="${question.id}_${index}">
-                                ${escapeHTML(option)}
-                            </label>
-                        </div>
-                    `;
-
-                }).join("")}
-            </div>
-        `;
-
-    }
+    progressBar.style.width =
+        `${percentage}%`;
 
 
-    if (question.type === "checkbox") {
+    let html = `
+        <div class="question-header">
 
-        const selected = answers[question.id] || [];
-
-        answerHTML = `
-            <div class="answer-grid">
-                ${question.options.map((option, index) => {
-
-                    const checked =
-                        selected.includes(option)
-                            ? "checked"
-                            : "";
-
-                    return `
-                        <div class="option">
-                            <input
-                                type="checkbox"
-                                id="${question.id}_${index}"
-                                name="${question.id}"
-                                value="${escapeAttribute(option)}"
-                                ${checked}
-                            >
-
-                            <label for="${question.id}_${index}">
-                                ${escapeHTML(option)}
-                            </label>
-                        </div>
-                    `;
-
-                }).join("")}
-            </div>
-        `;
-
-    }
-
-
-    questionContainer.innerHTML = `
-
-        <div class="question-card">
-
-            <div class="question-category">
-                <i class="bi bi-shield-fill"></i>
-                ${escapeHTML(question.category)}
+            <div class="question-index">
+                QUESTÃO ${String(number).padStart(2, "0")}
             </div>
 
             <h2 class="question-title">
-                ${escapeHTML(question.title)}
+                ${escapeHTML(
+                    question.title
+                )}
             </h2>
-
-            ${
-                question.description
-                    ? `<p class="question-description">
-                        ${escapeHTML(question.description)}
-                       </p>`
-                    : ""
-            }
-
-            ${answerHTML}
-
-        </div>
-
     `;
 
 
-    previousButton.disabled = currentQuestionIndex === 0;
+    if (question.helper) {
 
-    previousButton.style.opacity =
-        currentQuestionIndex === 0
-            ? ".4"
-            : "1";
+        html += `
+            <div class="question-helper">
+
+                <i class="bi bi-info-circle-fill"></i>
+
+                ${escapeHTML(
+                    question.helper
+                )}
+
+            </div>
+        `;
+    }
 
 
-    if (currentQuestionIndex === questions.length - 1) {
+    html += `
+        </div>
+    `;
+
+
+    const savedValue =
+        answers[question.id];
+
+
+    if (
+        question.type === "text"
+    ) {
+
+        html += `
+            <div class="input-wrapper">
+
+                <i class="bi bi-pencil-square"></i>
+
+                <input
+                    type="text"
+                    id="answerInput"
+                    class="answer-input"
+                    placeholder="${escapeHTML(
+                        question.placeholder
+                    )}"
+                    value="${escapeHTML(
+                        savedValue || ""
+                    )}"
+                    autocomplete="off"
+                >
+
+            </div>
+        `;
+    }
+
+
+    if (
+        question.type === "textarea"
+    ) {
+
+        html += `
+            <div class="textarea-wrapper">
+
+                <textarea
+                    id="answerInput"
+                    class="answer-textarea"
+                    placeholder="${escapeHTML(
+                        question.placeholder
+                    )}"
+                >${escapeHTML(
+                    savedValue || ""
+                )}</textarea>
+
+                <div class="textarea-counter">
+
+                    <span id="answerCounter">
+                        0
+                    </span>
+
+                    caracteres
+
+                </div>
+
+            </div>
+        `;
+    }
+
+
+    if (
+        question.type === "radio"
+    ) {
+
+        html += `
+            <div class="options-list">
+        `;
+
+        question.options.forEach(
+            (option, index) => {
+
+                const checked =
+                    savedValue === option
+                        ? "checked"
+                        : "";
+
+                html += `
+                    <label class="option-card">
+
+                        <input
+                            type="radio"
+                            name="${question.id}"
+                            value="${escapeHTML(
+                                option
+                            )}"
+                            ${checked}
+                        >
+
+                        <span class="option-indicator">
+                            ${String.fromCharCode(
+                                65 + index
+                            )}
+                        </span>
+
+                        <span class="option-text">
+                            ${escapeHTML(
+                                option
+                            )}
+                        </span>
+
+                        <span class="option-check">
+                            <i class="bi bi-check-lg"></i>
+                        </span>
+
+                    </label>
+                `;
+            }
+        );
+
+        html += `
+            </div>
+        `;
+    }
+
+
+    if (
+        question.type === "checkbox"
+    ) {
+
+        const selected =
+            Array.isArray(savedValue)
+                ? savedValue
+                : [];
+
+
+        html += `
+            <div class="options-list">
+        `;
+
+
+        question.options.forEach(
+            option => {
+
+                const checked =
+                    selected.includes(
+                        option
+                    )
+                        ? "checked"
+                        : "";
+
+                html += `
+                    <label class="option-card">
+
+                        <input
+                            type="checkbox"
+                            name="${question.id}"
+                            value="${escapeHTML(
+                                option
+                            )}"
+                            ${checked}
+                        >
+
+                        <span class="option-indicator">
+                            <i class="bi bi-check-lg"></i>
+                        </span>
+
+                        <span class="option-text">
+                            ${escapeHTML(
+                                option
+                            )}
+                        </span>
+
+                        <span class="option-check">
+                            <i class="bi bi-check-lg"></i>
+                        </span>
+
+                    </label>
+                `;
+            }
+        );
+
+
+        html += `
+            </div>
+        `;
+    }
+
+
+    questionContainer.innerHTML =
+        html;
+
+    attachAnswerEvents();
+
+    updateNavigation();
+
+    updateTextareaCounter();
+}
+
+
+function attachAnswerEvents() {
+
+    const question =
+        questions[currentQuestion];
+
+    const input =
+        $("#answerInput");
+
+
+    if (input) {
+
+        input.addEventListener(
+            "input",
+            () => {
+
+                answers[question.id] =
+                    input.value;
+
+                saveAnswers();
+
+                updateTextareaCounter();
+            }
+        );
+    }
+
+
+    questionContainer
+        .querySelectorAll(
+            'input[type="radio"]'
+        )
+        .forEach(
+            radio => {
+
+                radio.addEventListener(
+                    "change",
+                    () => {
+
+                        answers[
+                            question.id
+                        ] =
+                            radio.value;
+
+                        saveAnswers();
+                    }
+                );
+            }
+        );
+
+
+    questionContainer
+        .querySelectorAll(
+            'input[type="checkbox"]'
+        )
+        .forEach(
+            checkbox => {
+
+                checkbox.addEventListener(
+                    "change",
+                    () => {
+
+                        const selected =
+                            Array.from(
+                                questionContainer
+                                    .querySelectorAll(
+                                        'input[type="checkbox"]:checked'
+                                    )
+                            )
+                            .map(
+                                item =>
+                                    item.value
+                            );
+
+                        answers[
+                            question.id
+                        ] =
+                            selected;
+
+                        saveAnswers();
+                    }
+                );
+            }
+        );
+}
+
+
+function updateTextareaCounter() {
+
+    const textarea =
+        $("#answerInput");
+
+    const counter =
+        $("#answerCounter");
+
+    if (
+        !textarea ||
+        !counter
+    ) {
+        return;
+    }
+
+    counter.textContent =
+        textarea.value.length;
+}
+
+
+function validateCurrentQuestion() {
+
+    const question =
+        questions[currentQuestion];
+
+    const answer =
+        answers[question.id];
+
+
+    if (
+        question.type === "checkbox"
+    ) {
+
+        if (
+            !Array.isArray(answer) ||
+            answer.length === 0
+        ) {
+
+            showToast(
+                "Selecione pelo menos uma opção.",
+                "error"
+            );
+
+            return false;
+        }
+
+        return true;
+    }
+
+
+    if (
+        answer === undefined ||
+        answer === null ||
+        String(answer).trim() === ""
+    ) {
+
+        showToast(
+            "Preencha ou selecione uma resposta.",
+            "error"
+        );
+
+        return false;
+    }
+
+
+    return true;
+}
+
+
+function updateNavigation() {
+
+    prevButton.disabled =
+        currentQuestion === 0;
+
+
+    if (
+        currentQuestion ===
+        questions.length - 1
+    ) {
 
         nextButton.innerHTML = `
-            FINALIZAR
-            <i class="bi bi-check-lg"></i>
+            FINALIZAR CONCURSO
+            <i class="bi bi-shield-check"></i>
         `;
 
     } else {
@@ -570,458 +996,1350 @@ function renderQuestion() {
             PRÓXIMA
             <i class="bi bi-arrow-right"></i>
         `;
-
     }
-
-
-    attachAnswerListeners();
-
-}
-
-
-function attachAnswerListeners() {
-
-    const question = questions[currentQuestionIndex];
-
-    if (question.type === "text" || question.type === "textarea") {
-
-        const field = document.getElementById("answerField");
-
-        field.addEventListener("input", () => {
-
-            answers[question.id] = field.value;
-
-        });
-
-    }
-
-
-    if (question.type === "radio") {
-
-        document.querySelectorAll(
-            `input[name="${question.id}"]`
-        ).forEach(input => {
-
-            input.addEventListener("change", () => {
-
-                answers[question.id] = input.value;
-
-            });
-
-        });
-
-    }
-
-
-    if (question.type === "checkbox") {
-
-        document.querySelectorAll(
-            `input[name="${question.id}"]`
-        ).forEach(input => {
-
-            input.addEventListener("change", () => {
-
-                const selected = Array.from(
-                    document.querySelectorAll(
-                        `input[name="${question.id}"]:checked`
-                    )
-                ).map(item => item.value);
-
-                answers[question.id] = selected;
-
-            });
-
-        });
-
-    }
-
-}
-
-
-function saveCurrentAnswer() {
-
-    const question = questions[currentQuestionIndex];
-
-    if (question.type === "text" || question.type === "textarea") {
-
-        const field = document.getElementById("answerField");
-
-        if (field) {
-            answers[question.id] = field.value;
-        }
-
-    }
-
-
-    if (question.type === "radio") {
-
-        const checked = document.querySelector(
-            `input[name="${question.id}"]:checked`
-        );
-
-        if (checked) {
-            answers[question.id] = checked.value;
-        }
-
-    }
-
-
-    if (question.type === "checkbox") {
-
-        const checked = Array.from(
-            document.querySelectorAll(
-                `input[name="${question.id}"]:checked`
-            )
-        );
-
-        answers[question.id] =
-            checked.map(input => input.value);
-
-    }
-
-}
-
-
-function validateCurrentQuestion() {
-
-    const question = questions[currentQuestionIndex];
-
-    saveCurrentAnswer();
-
-    const answer = answers[question.id];
-
-    if (question.type === "checkbox") {
-
-        if (!answer || answer.length === 0) {
-
-            showToast("Selecione pelo menos uma opção.");
-
-            return false;
-
-        }
-
-        return true;
-
-    }
-
-
-    if (!answer || String(answer).trim() === "") {
-
-        showToast("Preencha a resposta antes de continuar.");
-
-        return false;
-
-    }
-
-    return true;
-
 }
 
 
 function nextQuestion() {
 
-    if (!validateCurrentQuestion()) {
+    if (
+        !validateCurrentQuestion()
+    ) {
         return;
     }
 
-    if (currentQuestionIndex === questions.length - 1) {
+
+    if (
+        currentQuestion ===
+        questions.length - 1
+    ) {
 
         finishTest();
 
         return;
-
     }
 
-    currentQuestionIndex++;
+
+    currentQuestion++;
 
     renderQuestion();
 
-    scrollToTestTop();
-
+    scrollToQuestion();
 }
 
 
 function previousQuestion() {
 
-    saveCurrentAnswer();
-
-    if (currentQuestionIndex > 0) {
-
-        currentQuestionIndex--;
-
-        renderQuestion();
-
-        scrollToTestTop();
-
+    if (
+        currentQuestion <= 0
+    ) {
+        return;
     }
 
-}
-
-
-function scrollToTestTop() {
-
-    window.scrollTo({
-        top: testSection.offsetTop - 20,
-        behavior: "smooth"
-    });
-
-}
-
-
-function finishTest() {
-
-    saveCurrentAnswer();
-
-    stopTimer();
-
-    testSection.classList.add("hidden");
-
-    resultSection.classList.remove("hidden");
-
-    resultNick.textContent =
-        answers.nick || "Candidato";
-
-    window.scrollTo({
-        top: resultSection.offsetTop,
-        behavior: "smooth"
-    });
-
-}
-
-
-function reviewTest() {
-
-    resultSection.classList.add("hidden");
-
-    testSection.classList.remove("hidden");
-
-    currentQuestionIndex = 0;
+    currentQuestion--;
 
     renderQuestion();
 
-    startTimer();
-
-    scrollToTestTop();
-
+    scrollToQuestion();
 }
 
 
-function startTimer() {
+function scrollToQuestion() {
+
+    const card =
+        document.querySelector(
+            ".quiz-card"
+        );
+
+    if (!card) {
+        return;
+    }
+
+    card.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+function startTest() {
+
+    testStarted = true;
+
+    testFinished = false;
+
+    currentQuestion = 0;
+
+    startScreen.classList.add(
+        "hidden"
+    );
+
+    quizPanel.classList.remove(
+        "hidden"
+    );
+
+    resultScreen.classList.add(
+        "hidden"
+    );
+
+    startTimer();
+
+    renderQuestion();
+
+    setTimeout(
+        scrollToQuestion,
+        100
+    );
+}
+
+
+function finishTest(
+    timeExpired = false
+) {
+
+    if (testFinished) {
+        return;
+    }
+
+
+    if (
+        !timeExpired &&
+        !validateCurrentQuestion()
+    ) {
+        return;
+    }
+
 
     stopTimer();
 
-    updateTimer();
+    testFinished = true;
 
-    timerInterval = setInterval(() => {
+    saveAnswers();
 
-        timeRemaining--;
+    renderResult();
 
-        updateTimer();
+    quizPanel.classList.add(
+        "hidden"
+    );
 
-        if (timeRemaining <= 0) {
+    resultScreen.classList.remove(
+        "hidden"
+    );
 
-            timeRemaining = 0;
+    resultScreen.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 
-            stopTimer();
 
-            autoFinish();
+function renderResult() {
 
+    $("#resultCandidateName")
+        .textContent =
+        getCandidateName();
+
+    $("#resultDate")
+        .textContent =
+        getCurrentDate();
+
+    $("#resultTotal")
+        .textContent =
+        `${questions.length} questões respondidas`;
+
+    $("#resultStatus")
+        .textContent =
+        "AGUARDANDO ANÁLISE";
+
+
+    const summary =
+        $("#resultSummary");
+
+    let html = "";
+
+
+    questions.forEach(
+        (question, index) => {
+
+            html += `
+                <div class="result-answer">
+
+                    <div class="result-answer-number">
+                        ${String(
+                            index + 1
+                        ).padStart(2, "0")}
+                    </div>
+
+                    <div class="result-answer-content">
+
+                        <div class="result-question">
+                            ${escapeHTML(
+                                question.title
+                            )}
+                        </div>
+
+                        <div class="result-response">
+                            ${escapeHTML(
+                                normalizeAnswer(
+                                    answers[
+                                        question.id
+                                    ]
+                                )
+                            )}
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
         }
-
-    }, 1000);
-
-}
-
-
-function stopTimer() {
-
-    if (timerInterval) {
-
-        clearInterval(timerInterval);
-
-        timerInterval = null;
-
-    }
-
-}
-
-
-function updateTimer() {
-
-    const minutes =
-        Math.floor(timeRemaining / 60)
-            .toString()
-            .padStart(2, "0");
-
-    const seconds =
-        (timeRemaining % 60)
-            .toString()
-            .padStart(2, "0");
-
-    timer.querySelector("strong").textContent =
-        `${minutes}:${seconds}`;
-
-
-    timer.classList.remove(
-        "warning",
-        "danger"
     );
 
 
-    if (timeRemaining <= 300) {
-
-        timer.classList.add("danger");
-
-    } else if (timeRemaining <= 600) {
-
-        timer.classList.add("warning");
-
-    }
-
+    summary.innerHTML =
+        html;
 }
 
 
-function autoFinish() {
-
-    saveCurrentAnswer();
-
-    testSection.classList.add("hidden");
-
-    resultSection.classList.remove("hidden");
-
-    resultNick.textContent =
-        answers.nick || "Candidato";
-
-    showToast(
-        "O tempo acabou. O concurso foi finalizado."
-    );
-
-}
-
-
-function sendEmail() {
-
-    const nick =
-        answers.nick || "Novo candidato";
-
-    const subject =
-        `[CONCURSO BOPE SV2] ${nick}`;
+function generateEmailBody() {
 
     let body = "";
 
-    body += "══════════════════════════════════════\n";
-    body += "       CONCURSO B.O.P.E • SV2\n";
-    body += "       BRASIL PLAY SHOX\n";
-    body += "══════════════════════════════════════\n\n";
+    body +=
+        "☠️ CONCURSO B.O.P.E — BRASIL PLAY SHOX | SV2\n";
 
-    body += `CANDIDATO: ${nick}\n`;
-    body += `DATA: ${new Date().toLocaleString("pt-BR")}\n\n`;
+    body +=
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
 
-    body += "──────────────────────────────────────\n";
-    body += "              RESPOSTAS\n";
-    body += "──────────────────────────────────────\n\n";
+    body +=
+        `📋 Processo: ${PROCESSO}\n`;
+
+    body +=
+        `👤 Candidato: ${getCandidateName()}\n`;
+
+    body +=
+        `📅 Data: ${getCurrentDate()}\n`;
+
+    body +=
+        "🛡️ Status: AGUARDANDO ANÁLISE\n\n";
+
+    body +=
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+    body +=
+        "📑 RESPOSTAS DO CANDIDATO\n";
+
+    body +=
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
 
 
-    questions.forEach((question, index) => {
+    questions.forEach(
+        (question, index) => {
 
-        let answer = answers[question.id];
+            body +=
+                `🔹 QUESTÃO ${index + 1}\n`;
 
-        if (Array.isArray(answer)) {
-            answer = answer.join(", ");
+            body +=
+                `${question.title}\n`;
+
+            body +=
+                `➡️ ${normalizeAnswer(
+                    answers[
+                        question.id
+                    ]
+                )}\n\n`;
         }
+    );
 
-        if (!answer) {
-            answer = "Não informado";
+
+    body +=
+        "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
+
+    body +=
+        "☠️ FIM DO CONCURSO\n";
+
+    body +=
+        "🇧🇷 BRASIL PLAY SHOX — SV2\n";
+
+
+    return body;
+}
+
+
+function generateWhatsAppMessage() {
+
+    let message = "";
+
+    message +=
+        "☠️ *CONCURSO B.O.P.E — SV2*\n";
+
+    message +=
+        "🇧🇷 *BRASIL PLAY SHOX*\n";
+
+    message +=
+        "━━━━━━━━━━━━━━━━━━━━\n\n";
+
+    message +=
+        `📋 *Processo:* ${PROCESSO}\n`;
+
+    message +=
+        `👤 *Candidato:* ${getCandidateName()}\n`;
+
+    message +=
+        `📅 *Data:* ${getCurrentDate()}\n`;
+
+    message +=
+        "🛡️ *Status:* AGUARDANDO ANÁLISE\n\n";
+
+    message +=
+        "━━━━━━━━━━━━━━━━━━━━\n";
+
+    message +=
+        "📑 *RESPOSTAS*\n";
+
+    message +=
+        "━━━━━━━━━━━━━━━━━━━━\n\n";
+
+
+    questions.forEach(
+        (question, index) => {
+
+            message +=
+                `*${index + 1}. ${question.title}*\n`;
+
+            message +=
+                `➡️ ${normalizeAnswer(
+                    answers[
+                        question.id
+                    ]
+                )}\n\n`;
         }
-
-        body += `${index + 1}. ${question.title}\n`;
-        body += `Resposta: ${answer}\n\n`;
-
-    });
+    );
 
 
-    body += "══════════════════════════════════════\n";
-    body += "      FIM DO CONCURSO • BOPE SV2\n";
-    body += "══════════════════════════════════════\n";
+    message +=
+        "━━━━━━━━━━━━━━━━━━━━\n";
+
+    message +=
+        "☠️ *FIM DO CONCURSO*";
+
+
+    return message;
+}
+
+
+function openSendWindow() {
+
+    if (!sendModal) {
+        return;
+    }
+
+    selectedPerson = null;
+
+    methodPanel.classList.add(
+        "hidden"
+    );
+
+    sendModal.classList.remove(
+        "hidden"
+    );
+}
+
+
+function closeSendWindow() {
+
+    sendModal.classList.add(
+        "hidden"
+    );
+
+    selectedPerson = null;
+
+    methodPanel.classList.add(
+        "hidden"
+    );
+}
+
+
+function selectPerson(personId) {
+
+    const person =
+        EMAIL_CONTATOS[
+            personId
+        ];
+
+    if (!person) {
+        return;
+    }
+
+    selectedPerson =
+        personId;
+
+
+    $("#selectedPersonName")
+        .textContent =
+        person.nome;
+
+
+    $("#selectedEmail")
+        .textContent =
+        person.email;
+
+
+    $("#selectedWhatsApp")
+        .textContent =
+        person.whatsapp;
+
+
+    methodPanel.classList.remove(
+        "hidden"
+    );
+
+
+    document
+        .querySelector(
+            ".responsible-list"
+        )
+        .classList.add(
+            "hidden"
+        );
+}
+
+
+function backToResponsibleList() {
+
+    selectedPerson = null;
+
+    methodPanel.classList.add(
+        "hidden"
+    );
+
+    document
+        .querySelector(
+            ".responsible-list"
+        )
+        .classList.remove(
+            "hidden"
+        );
+}
+
+
+function sendByEmail() {
+
+    if (!selectedPerson) {
+        return;
+    }
+
+    const person =
+        EMAIL_CONTATOS[
+            selectedPerson
+        ];
+
+
+    const subject =
+        `[CONCURSO BOPE SV2] ${getCandidateName()}`;
+
+
+    const body =
+        generateEmailBody();
 
 
     const mailto =
-        `mailto:felipemiguel.dev@gmail.com` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
+        `mailto:${person.email}` +
+        `?subject=${encodeURIComponent(
+            subject
+        )}` +
+        `&body=${encodeURIComponent(
+            body
+        )}`;
 
 
-    window.location.href = mailto;
+    window.location.href =
+        mailto;
 
+
+    showToast(
+        `Abrindo e-mail para ${person.nome}.`,
+        "success"
+    );
+
+
+    setTimeout(
+        closeSendWindow,
+        500
+    );
 }
 
 
-function showToast(message) {
+function sendByWhatsApp() {
 
-    toastMessage.textContent = message;
+    if (!selectedPerson) {
+        return;
+    }
 
-    toast.classList.add("show");
+    const person =
+        EMAIL_CONTATOS[
+            selectedPerson
+        ];
 
-    setTimeout(() => {
 
-        toast.classList.remove("show");
+    const message =
+        generateWhatsAppMessage();
 
-    }, 3000);
 
+    const url =
+        `https://wa.me/${person.whatsapp}` +
+        `?text=${encodeURIComponent(
+            message
+        )}`;
+
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+
+    showToast(
+        `Abrindo WhatsApp para ${person.nome}.`,
+        "success"
+    );
+
+
+    setTimeout(
+        closeSendWindow,
+        500
+    );
 }
 
 
-function escapeHTML(value) {
+function sanitizeFileName(name) {
 
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
+    return String(name)
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+        .replace(
+            /[^a-zA-Z0-9_-]/g,
+            "_"
+        )
+        .replace(
+            /_+/g,
+            "_"
+        )
+        .substring(
+            0,
+            50
+        );
 }
 
 
-function escapeAttribute(value) {
+function generateTXT() {
 
-    return String(value)
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    let report = "";
 
+    report +=
+        "============================================================\n";
+
+    report +=
+        "              CONCURSO B.O.P.E — SV2\n";
+
+    report +=
+        "                BRASIL PLAY SHOX\n";
+
+    report +=
+        "============================================================\n\n";
+
+    report +=
+        `PROCESSO: ${PROCESSO}\n`;
+
+    report +=
+        `CANDIDATO: ${getCandidateName()}\n`;
+
+    report +=
+        `DATA: ${getCurrentDate()}\n`;
+
+    report +=
+        "STATUS: AGUARDANDO ANALISE\n\n";
+
+
+    questions.forEach(
+        (question, index) => {
+
+            report +=
+                `QUESTAO ${index + 1}\n`;
+
+            report +=
+                `${question.title}\n`;
+
+            report +=
+                "------------------------------------------------------------\n";
+
+            report +=
+                `${normalizeAnswer(
+                    answers[
+                        question.id
+                    ]
+                )}\n\n`;
+        }
+    );
+
+
+    return report;
 }
 
 
-/* FECHAR MENU AO CLICAR FORA */
+function downloadTXT() {
 
-document.addEventListener("click", event => {
+    const blob =
+        new Blob(
+            [
+                generateTXT()
+            ],
+            {
+                type:
+                    "text/plain;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href = url;
+
+
+    link.download =
+        `Concurso_BOPE_${sanitizeFileName(
+            getCandidateName()
+        )}.txt`;
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+    link.remove();
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+
+    showToast(
+        "TXT baixado com sucesso.",
+        "success"
+    );
+}
+
+
+function downloadPDF() {
 
     if (
-        mainNav.classList.contains("open") &&
-        !mainNav.contains(event.target) &&
-        !menuButton.contains(event.target)
+        !window.jspdf ||
+        !window.jspdf.jsPDF
     ) {
 
-        mainNav.classList.remove("open");
+        showToast(
+            "O PDF ainda está carregando. Tente novamente.",
+            "error"
+        );
 
-        menuButton.querySelector("i").className =
-            "bi bi-list";
-
+        return;
     }
 
-});
+
+    const {
+        jsPDF
+    } = window.jspdf;
 
 
-/* PREVENIR SAÍDA ACIDENTAL DURANTE O CONCURSO */
+    const doc =
+        new jsPDF();
 
-window.addEventListener("beforeunload", event => {
 
-    if (testStarted && !testSection.classList.contains("hidden")) {
+    const pageWidth =
+        doc.internal.pageSize.getWidth();
 
-        event.preventDefault();
 
-        event.returnValue = "";
+    const pageHeight =
+        doc.internal.pageSize.getHeight();
 
+
+    const margin = 15;
+
+    let y = 20;
+
+
+    function checkPage(
+        height
+    ) {
+
+        if (
+            y + height >
+            pageHeight - 15
+        ) {
+
+            doc.addPage();
+
+            y = 20;
+        }
     }
 
-});
+
+    function addText(
+        text,
+        size = 10,
+        bold = false
+    ) {
+
+        doc.setFont(
+            "helvetica",
+            bold
+                ? "bold"
+                : "normal"
+        );
+
+        doc.setFontSize(
+            size
+        );
+
+
+        const lines =
+            doc.splitTextToSize(
+                String(text),
+                pageWidth -
+                margin * 2
+            );
+
+
+        const lineHeight =
+            size * .45;
+
+
+        checkPage(
+            lines.length *
+            lineHeight +
+            5
+        );
+
+
+        doc.text(
+            lines,
+            margin,
+            y
+        );
+
+
+        y +=
+            lines.length *
+            lineHeight +
+            5;
+    }
+
+
+    doc.setFillColor(
+        10,
+        15,
+        11
+    );
+
+
+    doc.rect(
+        0,
+        0,
+        pageWidth,
+        30,
+        "F"
+    );
+
+
+    doc.setTextColor(
+        255,
+        255,
+        255
+    );
+
+
+    doc.setFont(
+        "helvetica",
+        "bold"
+    );
+
+
+    doc.setFontSize(
+        20
+    );
+
+
+    doc.text(
+        "B.O.P.E — SV2",
+        margin,
+        14
+    );
+
+
+    doc.setFontSize(
+        8
+    );
+
+
+    doc.text(
+        `PROCESSO ${PROCESSO}`,
+        margin,
+        22
+    );
+
+
+    y = 40;
+
+
+    doc.setTextColor(
+        20,
+        20,
+        20
+    );
+
+
+    addText(
+        "RELATORIO DE CONCURSO",
+        16,
+        true
+    );
+
+
+    addText(
+        `Candidato: ${getCandidateName()}`,
+        10,
+        true
+    );
+
+
+    addText(
+        `Data: ${getCurrentDate()}`,
+        9
+    );
+
+
+    addText(
+        "Status: AGUARDANDO ANALISE DA LIDERANCA",
+        9
+    );
+
+
+    y += 5;
+
+
+    questions.forEach(
+        (question, index) => {
+
+            checkPage(25);
+
+
+            addText(
+                `QUESTAO ${index + 1}`,
+                10,
+                true
+            );
+
+
+            addText(
+                question.title,
+                9,
+                true
+            );
+
+
+            addText(
+                `Resposta: ${normalizeAnswer(
+                    answers[
+                        question.id
+                    ]
+                )}`,
+                9
+            );
+
+
+            y += 3;
+        }
+    );
+
+
+    const totalPages =
+        doc.internal.getNumberOfPages();
+
+
+    for (
+        let i = 1;
+        i <= totalPages;
+        i++
+    ) {
+
+        doc.setPage(i);
+
+        doc.setFont(
+            "helvetica",
+            "normal"
+        );
+
+        doc.setFontSize(
+            8
+        );
+
+        doc.setTextColor(
+            120,
+            120,
+            120
+        );
+
+        doc.text(
+            `B.O.P.E SV2 | ${PROCESSO}`,
+            margin,
+            pageHeight - 8
+        );
+
+        doc.text(
+            `${i}/${totalPages}`,
+            pageWidth - margin,
+            pageHeight - 8,
+            {
+                align: "right"
+            }
+        );
+    }
+
+
+    doc.save(
+        `Concurso_BOPE_${sanitizeFileName(
+            getCandidateName()
+        )}.pdf`
+    );
+
+
+    showToast(
+        "PDF baixado com sucesso.",
+        "success"
+    );
+}
+
+
+function reviewAnswers() {
+
+    resultScreen.classList.add(
+        "hidden"
+    );
+
+    quizPanel.classList.remove(
+        "hidden"
+    );
+
+    testFinished = false;
+
+    currentQuestion = 0;
+
+    renderQuestion();
+
+    scrollToQuestion();
+}
+
+
+function initMenu() {
+
+    const menuButton =
+        $("#menuButton");
+
+    const mobileMenu =
+        $("#mobileMenu");
+
+
+    if (
+        !menuButton ||
+        !mobileMenu
+    ) {
+        return;
+    }
+
+
+    menuButton.addEventListener(
+        "click",
+        () => {
+
+            mobileMenu.classList.toggle(
+                "open"
+            );
+        }
+    );
+
+
+    mobileMenu
+        .querySelectorAll("a")
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        mobileMenu.classList.remove(
+                            "open"
+                        );
+                    }
+                );
+            }
+        );
+}
+
+
+function init() {
+
+    loadAnswers();
+
+    updateTimer();
+
+
+    if (startButton) {
+
+        startButton.addEventListener(
+            "click",
+            startTest
+        );
+    }
+
+
+    if (nextButton) {
+
+        nextButton.addEventListener(
+            "click",
+            nextQuestion
+        );
+    }
+
+
+    if (prevButton) {
+
+        prevButton.addEventListener(
+            "click",
+            previousQuestion
+        );
+    }
+
+
+    if (reviewButton) {
+
+        reviewButton.addEventListener(
+            "click",
+            reviewAnswers
+        );
+    }
+
+
+    if (downloadTXTButton) {
+
+        downloadTXTButton.addEventListener(
+            "click",
+            downloadTXT
+        );
+    }
+
+
+    if (downloadPDFButton) {
+
+        downloadPDFButton.addEventListener(
+            "click",
+            downloadPDF
+        );
+    }
+
+
+    /*
+     * ABRIR CENTRAL DE ENVIO
+     */
+
+    if (openSendModal) {
+
+        openSendModal.addEventListener(
+            "click",
+            openSendWindow
+        );
+    }
+
+
+    /*
+     * FECHAR CENTRAL
+     */
+
+    if (closeSendModal) {
+
+        closeSendModal.addEventListener(
+            "click",
+            closeSendWindow
+        );
+    }
+
+
+    /*
+     * CLICAR FORA DO MODAL
+     */
+
+    if (sendModal) {
+
+        sendModal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target ===
+                    sendModal
+                ) {
+
+                    closeSendWindow();
+                }
+            }
+        );
+    }
+
+
+    /*
+     * ESCOLHER RESPONSÁVEL
+     */
+
+    document
+        .querySelectorAll(
+            ".responsible-card"
+        )
+        .forEach(
+            card => {
+
+                card.addEventListener(
+                    "click",
+                    () => {
+
+                        selectPerson(
+                            card.dataset.person
+                        );
+                    }
+                );
+            }
+        );
+
+
+    /*
+     * VOLTAR PARA RESPONSÁVEIS
+     */
+
+    if (backToPeople) {
+
+        backToPeople.addEventListener(
+            "click",
+            backToResponsibleList
+        );
+    }
+
+
+    /*
+     * ENVIAR POR E-MAIL
+     */
+
+    if (modalEmailButton) {
+
+        modalEmailButton.addEventListener(
+            "click",
+            sendByEmail
+        );
+    }
+
+
+    /*
+     * ENVIAR PELO WHATSAPP
+     */
+
+    if (modalWhatsAppButton) {
+
+        modalWhatsAppButton.addEventListener(
+            "click",
+            sendByWhatsApp
+        );
+    }
+
+
+    /*
+     * MENU MOBILE
+     */
+
+    initMenu();
+
+
+    /*
+     * LINKS INTERNOS
+     */
+
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(
+            link => {
+
+                link.addEventListener(
+                    "click",
+                    event => {
+
+                        const id =
+                            link.getAttribute(
+                                "href"
+                            );
+
+                        const target =
+                            document.querySelector(
+                                id
+                            );
+
+                        if (!target) {
+                            return;
+                        }
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: "smooth"
+                        });
+                    }
+                );
+            }
+        );
+
+
+    /*
+     * HEADER AO ROLAR
+     */
+
+    const header =
+        document.querySelector(
+            ".topbar"
+        );
+
+
+    if (header) {
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                header.classList.toggle(
+                    "scrolled",
+                    window.scrollY > 30
+                );
+
+            },
+            {
+                passive: true
+            }
+        );
+    }
+
+
+    /*
+     * TECLAS
+     */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape" &&
+                sendModal &&
+                !sendModal.classList.contains(
+                    "hidden"
+                )
+            ) {
+
+                closeSendWindow();
+
+                return;
+            }
+
+
+            if (
+                !testStarted ||
+                testFinished
+            ) {
+                return;
+            }
+
+
+            if (
+                event.key === "ArrowRight"
+            ) {
+
+                nextQuestion();
+            }
+
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
+
+                previousQuestion();
+            }
+
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                if (
+                    event.target.tagName !==
+                    "TEXTAREA" &&
+                    event.target.tagName !==
+                    "INPUT"
+                ) {
+
+                    event.preventDefault();
+
+                    nextQuestion();
+                }
+            }
+
+        }
+    );
+
+
+    console.log(
+        "B.O.P.E SV2 carregado."
+    );
+}
+
+
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        init,
+        {
+            once: true
+        }
+    );
+
+} else {
+
+    init();
+}
